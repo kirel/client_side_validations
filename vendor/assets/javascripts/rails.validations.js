@@ -104,7 +104,7 @@
       // Because 'length' is defined on the list of validators we cannot call jQuery.each on
       // the clientSideValidations.validators.all() object
       for (kind in clientSideValidations.validators.all()) {
-        if (validators[kind] && (message = clientSideValidations.validators.all()[kind](element, validators[kind]))) {
+        if (validators && validators[kind] && (message = clientSideValidations.validators.all()[kind](element, validators[kind]))) {
           element.trigger('element:validate:fail', message).data('valid', false);
           valid = false;
           break;
